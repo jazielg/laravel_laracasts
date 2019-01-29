@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index() {
-        return view('index', [
+        return view('myfirstsite.index', [
             'tasks' => [
                 'Go to the store',
                 'Go to the market',
@@ -17,10 +17,10 @@ class PagesController extends Controller
     }
 
     public function about(){
-        return view('about');
+        return view('myfirstsite.about');
     }
 
     public function contact() {
-        return view('contact');
+        return view('myfirstsite.contact');
     }
 }

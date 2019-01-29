@@ -34,9 +34,9 @@
 //     return view('contact');
 // });
 
-Route::get('/', 'PagesController@index');
-Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'PagesController@contact');
+Route::get('/myfirstsite', 'PagesController@index');
+Route::get('/myfirstsite/about', 'PagesController@about');
+Route::get('/myfirstsite/contact', 'PagesController@contact');
 
 // Route::get('/projects', 'ProjectsController@index');
 // Route::post('/projects', 'ProjectsController@store');
