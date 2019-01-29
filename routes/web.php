@@ -11,6 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/', function() {
+    
+//     return view('index', [
+//         'tasks' => [
+//             'Go to the store',
+//             'Go to the market',
+//             'Go to work'
+//         ]
+//     ]);
+// });
+
+// Route::get('/about', function() {
+//     return view('about');
+// });
+
+// Route::get('/contact', function() {
+//     return view('contact');
+// });
+
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
