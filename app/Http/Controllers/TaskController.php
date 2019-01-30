@@ -47,7 +47,7 @@ class TaskController extends Controller
         //
     }
 
-    
+    // Pode remover este método    
     public function update(Request $request, Task $task)
     {
         // Metodo 1 - Alterar o valor no controller
@@ -60,10 +60,10 @@ class TaskController extends Controller
         // request()->has('completed') ? $task->complete() : $task->incomplete();
 
         // Metodo 4 - Armazena o nome do metodo na variavel e chama no final
-        $method = request()->has('completed') ? 'complete' : 'incomplete';
-        $task->$method();
+        // $method = request()->has('completed') ? 'complete' : 'incomplete';
+        // $task->$method();
 
-        return back();
+        // return back();
     }
 
     

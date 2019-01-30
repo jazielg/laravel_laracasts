@@ -47,4 +47,7 @@ Route::get('/myfirstsite/contact', 'PagesController@contact');
 Route::resource('projects', 'ProjectsController');
 
 Route::post('/projects/{project}/tasks', 'TaskController@store');
-Route::patch('/tasks/{task}', 'TaskController@update');
+// Route::patch('/tasks/{task}', 'TaskController@update');
+
+Route::post('/completed-tasks/{task}', 'CompletedTasksController@store');
+Route::delete('/completed-tasks/{task}', 'CompletedTasksController@destroy');
