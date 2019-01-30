@@ -25,4 +25,10 @@
         </div>
     @endif
 
+    <form action="/projects/{{ $project->id }}/tasks" method="post">
+        @csrf
+        <input type="text" name="description">
+        <input type="submit" value="Add Task">
+    </form>
+
 @endsection

@@ -46,4 +46,5 @@ Route::get('/myfirstsite/contact', 'PagesController@contact');
 // php artisan make:controller ProjectsController -r -m Project
 Route::resource('projects', 'ProjectsController');
 
+Route::post('/projects/{project}/tasks', 'TaskController@store');
 Route::patch('/tasks/{task}', 'TaskController@update');

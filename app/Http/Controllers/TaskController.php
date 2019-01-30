@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Task;
 use Illuminate\Http\Request;
 
+use App\Project;
+
 class TaskController extends Controller
 {
    
@@ -20,9 +22,14 @@ class TaskController extends Controller
     }
 
     
-    public function store(Request $request)
+    public function store(Project $project)
     {
-        //
+        Task::create([
+            'project_id' => $project->id,
+            'description' => request('description')
+        ]);
+
+        return back();
     }
 
    
