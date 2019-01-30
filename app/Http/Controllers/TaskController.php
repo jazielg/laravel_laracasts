@@ -50,7 +50,19 @@ class TaskController extends Controller
     
     public function update(Request $request, Task $task)
     {
-        $task->update(['completed' => request()->has('completed')]);
+        // Metodo 1 - Alterar o valor no controller
+        // $task->update(['completed' => request()->has('completed')]);
+
+        // Metodo 2 - Enviar para uma função true ou false
+        // $task->complete(request()->has('completed'));
+
+        // Metodo 3 - Enviar para função se true ou enviar para outra função se false.
+        // request()->has('completed') ? $task->complete() : $task->incomplete();
+
+        // Metodo 4 - Armazena o nome do metodo na variavel e chama no final
+        $method = request()->has('completed') ? 'complete' : 'incomplete';
+        $task->$method();
+
         return back();
     }
 
