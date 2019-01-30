@@ -31,4 +31,6 @@
         <input type="submit" value="Add Task">
     </form>
 
+    @include ('errors')
+
 @endsection

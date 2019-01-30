@@ -28,8 +28,9 @@ class TaskController extends Controller
         //     'project_id' => $project->id,
         //     'description' => request('description')
         // ]);
+        $attributes = request()->validate(['description' => 'required|min:3|max:255']);
 
-        $project->addTask(request('description'));
+        $project->addTask($attributes);
 
         return back();
     }
