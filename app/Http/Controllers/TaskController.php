@@ -24,10 +24,12 @@ class TaskController extends Controller
     
     public function store(Project $project)
     {
-        Task::create([
-            'project_id' => $project->id,
-            'description' => request('description')
-        ]);
+        // Task::create([
+        //     'project_id' => $project->id,
+        //     'description' => request('description')
+        // ]);
+
+        $project->addTask(request('description'));
 
         return back();
     }
