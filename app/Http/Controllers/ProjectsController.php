@@ -7,10 +7,15 @@ use Illuminate\Http\Request;
 
 class ProjectsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('owner_id', auth()->id())->get();
         return view('projects.index', compact('projects'));
     }
 
@@ -28,6 +33,7 @@ class ProjectsController extends Controller
             'title' => 'required|min:3|max:255',
             'description' => 'required|min:3'
         ]);
+        $attributes['owner_id'] = auth()->id();
         Project::create($attributes);
         return redirect('/projects');
     }

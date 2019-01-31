@@ -34,7 +34,7 @@ Route::get('/', function () {
 //     return view('contact');
 // });
 
-Route::get('/myfirstsite', 'PagesController@index');
+Route::get('/myfirstsite', 'PagesController@index')->middleware('guest');
 Route::get('/myfirstsite/about', 'PagesController@about');
 Route::get('/myfirstsite/contact', 'PagesController@contact');
 
