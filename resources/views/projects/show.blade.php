@@ -29,7 +29,7 @@
 
     <form action="/projects/{{ $project->id }}/tasks" method="post">
         @csrf
-        <input type="text" name="description">
+        <input type="text" name="description" required>
         <input type="submit" value="Add Task">
     </form>
 

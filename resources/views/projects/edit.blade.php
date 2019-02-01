@@ -8,10 +8,10 @@
         @method('PATCH')
         @csrf
         <div>
-            <input type="text" name="title" value="{{ $project->title }}">
+            <input type="text" name="title" value="{{ $project->title }}" required>
         </div>
         <div>
-            <textarea name="description" cols="30" rows="10">{{ $project->description }}</textarea>
+            <textarea name="description" cols="30" rows="10" required>{{ $project->description }}</textarea>
         </div>
         <div>
             <button type="submit">Update Project</button>
