@@ -1,6 +1,10 @@
 @extends('projectslayout')
 
 @section('content')
+
+    @if (session('message'))
+        <p>{{ session('message') }}</p>
+    @endif
     
     <h1>Projects</h1>
 
